@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from '../Img/LogoCarrito.svg'
+import Img from '../ImgCarrito/LogoCarrito.svg'
 
 const ImgCarrito = () => {
     
