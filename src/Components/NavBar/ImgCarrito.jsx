@@ -1,14 +1,9 @@
-import React from 'react'
-import Img from '../ImgCarrito/LogoCarrito.svg'
+import React from 'react';
+import Image from '../ImgCarrito/LogoCarrito.svg'
 
-const ImgCarrito = () => {
-    
-    
-    return (
-        <div>
-            <img src={Img} alt="" width={25}/>
-        </div>
-    )
-}
+export const ImgCarrito = () => {
+    return <div>
+                <img src={Image} alt='Logo' width={30}/>
+            </div>;
+};
 
-export default ImgCarrito
