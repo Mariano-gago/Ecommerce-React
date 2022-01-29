@@ -1,0 +1,15 @@
+.btn-modo{
+    border: 2px solid grey;
+}
+
+.btn-modo:hover{
+    background-color: #ffcc00;
+}
+
+.btn-agregar{
+    background-color: #ffcc00;
+}
+
+.btn-agregar:hover{
+    background-color: #eed77d;
+}

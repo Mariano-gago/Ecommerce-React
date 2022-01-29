@@ -1,0 +1,15 @@
+.prueba{
+    color: red;
+}
+
+.size{
+    width: 500px;
+    height: 400px;
+}
+
+.info{
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}

@@ -1,15 +1,14 @@
 import React from 'react';
-import { ItemCount } from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 
 
-const Item = ({name, info, precio, img, stock, onAdd}) => {
+
+const Item = ({id, name, info, precio, img, stock, onAdd}) => {
     //console.log(name);
     //console.log(name);
     //console.log(img);
 
-    function onAdd (cant){
-        console.log(cant);
-    }
+    
 
     return (
             <div>
@@ -18,7 +17,7 @@ const Item = ({name, info, precio, img, stock, onAdd}) => {
                         {name}
                     </div>
                     <div className="card-body">
-                        <img src={img} alt='' />            
+                        <img width={250} src={img} alt='' />            
                         <div>
                             <p>{info}</p> 
                         </div>
@@ -27,8 +26,9 @@ const Item = ({name, info, precio, img, stock, onAdd}) => {
                         </div>                                                           
                     </div>
                     <div className="card-footer">
+                        <Link to={`/detalle/${id}`}>
                             <button> DETALLE DEL PRODUCTO</button>
-                    <ItemCount initial = {1} stock = {stock} onAdd={onAdd} />                                                       
+                        </Link>
                     </div>
                 </div>
             </div>

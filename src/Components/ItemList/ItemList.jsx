@@ -6,8 +6,10 @@ const ItemList = ({listado}) => {
     //console.log(listado);
     return (
     <div>
-        {listado.map( (producto) => (<Item
+        {listado.map( (producto) => (
+        <Item
         key= {producto.id}
+        id= {producto.id}
         categoria= {producto.categoria}
         name= {producto.name}
         info= {producto.info}
