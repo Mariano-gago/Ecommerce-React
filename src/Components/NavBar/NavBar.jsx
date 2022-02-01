@@ -12,7 +12,7 @@ const NavBar = () => {
         <div className='background'>
             <Navbar collapseOnSelect expand="lg"  variant="dark">
                 <Container>
-                    <NavLink className='text-black' to=''>
+                    <NavLink className='text-black titulo' to=''>
                     Las Delicias de Maria Cecilia
                     </NavLink>
                 

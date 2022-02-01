@@ -107,7 +107,7 @@ const productos = [
     {
         id: "8",
         categoria: "cookies",
-        name: "BARRAS DE CEREAL NEGRO",
+        name: "GALLETITAS DE LIMON CON COBERTURA D CHOCOLATE",
         info: "Galletitas de limon rellena con una dulce crema de Limon y cubierta con chocolate.",
         detalle: "Galletitas de limon rellena con una dulce crema de Limon y cubierta con chocolate.",
         imgDetalle: ImgDetalleCookiesChoco,
