@@ -5,7 +5,7 @@ import Item from '../Item/Item';
 const ItemList = ({listado}) => {
     //console.log(listado);
     return (
-    <div>
+    <div className='row'>
         {listado.map( (producto) => (
         <Item
         key= {producto.id}

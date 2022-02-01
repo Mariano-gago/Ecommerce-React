@@ -1,13 +1,20 @@
 import ImgChocolate from '../Img/chocolate.png'
 import ImgMerengue from '../Img/merengue.png'
-import ImgBlanco from '../Img/blanco1.png'
+import ImgCacao from '../Img/AlfajorCacao.jpg'
 import ImgNuez from '../Img/nuez.png'
-import ImgConoBlanco from '../Img/conoblanco.png'
+import ImgConoCacao from '../Img/HavannetCacaox1.jpg'
 import ImgConoChocolate from '../Img/conochocolate.png'
-import ImgBarritaChoco2 from '../Img/barritachoco2.webp'
-import ImgBarritaChoco3 from '../Img/barritachoco3.webp'
+import ImgCookieLimon from '../Img/cookieLimon.jpg'
+import ImgCookieChoco from '../Img/cookieChoco.png'
 import ImgDetalleChoco from '../Img/alfajorChocolatex12.jpg'
 import ImgDetalleNuez from '../Img/Alfajor-Nuez-x-12.jpg'
+import ImgDetalleMerengue from '../Img/alfajorMerengue.jpg'
+import ImgDetalleChocoCacao from '../Img/alfajorCacaox12.jpg'
+import ImgDetalleConitos from '../Img/Havannetsx6.jpg'
+import ImgDetalleConitoCacao from '../Img/HavannetCacao.jpg'
+import ImgDetalleCookiesLimon from '../Img/cajaCookieLimon.jpg'
+import ImgDetalleCookiesChoco from '../Img/cajaCookieChoco.jpg'
+
 
 
 
@@ -27,8 +34,10 @@ const productos = [
     {
         id: "2",
         categoria: "alfajores",
-        name: "MERENGUE",
+        name: "ALFAJOR DE MERENGUE",
         info: "Alfajor relleno con Dulce de leche y cubierto con Merengue.",
+        detalle: "Alfajor relleno de dulce de leche y cobertura de merengue.",
+        imgDetalle: ImgDetalleMerengue,
         precio: 95,
         img: ImgMerengue,
         cantidad: 1,
@@ -38,21 +47,24 @@ const productos = [
     {
         id: "3",
         categoria: "alfajores",
-        name: "NUEZ",
+        name: "ALFAJOR DE NUEZ",
         info: "Alfajor de dulce de leche, cajú y nueces, cubierto de chocolate blanco.",
+        detalle: "Alfajor de dulce de leche, cajú y nueces, cubierto de chocolate blanco.",
+        imgDetalle: ImgDetalleNuez,
         precio: 130,
         img: ImgNuez,
-        imgDetalle: ImgDetalleNuez,
         cantidad: 1,
         stock: 85
     },
     {
         id: "4",
         categoria: "alfajores",
-        name: "BLANCO",
-        info: "Alfajor relleno con Dulce de leche y cubierto con Chocolate Blanco.",
+        name: "ALFAJOR DE CHOCOLATE 70% Cacao",
+        info: "Alfajor relleno con Dulce de leche y cubierto con 70% puro cacao.",
+        detalle: "Alfajor relleno de dulce de leche y cubierto con 70% puro cacao.",
+        imgDetalle: ImgDetalleChocoCacao,
         precio: 95,
-        img: ImgBlanco,
+        img: ImgCacao,
         cantidad: 1,
         stock: 190
     },
@@ -61,6 +73,8 @@ const productos = [
         categoria: "conitos",
         name: " CONITOS DE CHOCOLATE",
         info: "Conito relleno con Dulce de leche y cubierto con Chocolate semiamargo.",
+        detalle: "Conito relleno con Dulce de leche y cubierto con Chocolate semiamargo.",
+        imgDetalle: ImgDetalleConitos,
         precio: 95,
         img: ImgConoChocolate,
         cantidad: 1,
@@ -69,30 +83,36 @@ const productos = [
     {
         id: "6",
         categoria: "conitos",
-        name: "CONITOS DE CHOCOLATE BLANCO",
-        info: "Conito relleno con Dulce de leche y cubierto con Chocolate Blanco.",
+        name: "CONITOS DE CHOCOLATE 70% CACAO",
+        info: "Conito relleno con Dulce de leche y cubierto con un exquisito chocolate 70% Cacao.",
+        detalle: "Conito relleno con Dulce de leche y cubierto con Chocolate semiamargo.",
+        imgDetalle: ImgDetalleConitoCacao,
         precio: 95,
-        img: ImgConoBlanco,
+        img: ImgConoCacao,
         cantidad: 1,
         stock: 190
     },
     {
         id: "7",
-        categoria: "barras",
-        name: "BARRAS DE CREAL BLANCO",
-        info: "Conito relleno con Dulce de leche y cubierto con Chocolate Blanco.",
+        categoria: "cookies",
+        name: "GALLETITAS DE LIMON",
+        info: "Galletitas de limon rellena con una dulce crema de Limon.",
+        detalle: "Galletitas de limon rellena con una dulce crema de Limon.",
+        imgDetalle: ImgDetalleCookiesLimon,
         precio: 95,
-        img: ImgBarritaChoco3,
+        img: ImgCookieLimon,
         cantidad: 1,
         stock: 190
     },
     {
         id: "8",
-        categoria: "barras",
+        categoria: "cookies",
         name: "BARRAS DE CEREAL NEGRO",
-        info: "Conito relleno con Dulce de leche y cubierto con Chocolate Blanco.",
+        info: "Galletitas de limon rellena con una dulce crema de Limon y cubierta con chocolate.",
+        detalle: "Galletitas de limon rellena con una dulce crema de Limon y cubierta con chocolate.",
+        imgDetalle: ImgDetalleCookiesChoco,
         precio: 95,
-        img: ImgBarritaChoco2,
+        img: ImgCookieChoco,
         cantidad: 1,
         stock: 190
     }

@@ -3,33 +3,37 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 import getProductos from '../../Helpers/getProductos';
 import ItemDetail from '../ItemDetail/ItemDetail';
-
+import Spinner from 'react-bootstrap/Spinner';
 
 const ItemDetailContainer = () => {
 
-    const [DetalleProducto, setDetalleProducto] = useState([]);
+    const [detalleProducto, setDetalleProducto] = useState({});
+    const [loading, setLoading] = useState(true);
     const {id} = useParams();
-    console.log(DetalleProducto);
+    console.log(detalleProducto);
 
     useEffect(()=> {
-
-        if (id) {
-            
             getProductos()
             .then(productos => setDetalleProducto (productos.find( prod => prod.id === id)))
-            .catch((error) => console.log(error));
-        }else{
-            getProductos()
-            .then(productos => setDetalleProducto (productos))
-            .catch((error) => console.log(error));
-            
-        }
+            .catch((error) => console.log(error))
+            .finally(()=> setLoading(false))
     },[id]) 
 
     //console.log(id);
     //console.log(DetalleProducto);
     return <div>
-        <ItemDetail detalle = {DetalleProducto}/>
+        {
+            loading ? <Spinner
+            className='m-5'
+            variant="info"
+            animation="grow"
+            size="xl"
+            role="status"
+            aria-hidden="true"
+        />
+        :
+        <ItemDetail detalle = {detalleProducto}/>
+        }
     </div>;
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import './ItemDetail.css';
-import { Card, Button } from 'react-bootstrap';
 import { ItemCount } from '../ItemCount/ItemCount';
 
 
+
 const ItemDetail = ({detalle}) => {
-    //console.log(detalle);
+    
     function onAdd (cant){
         console.log(cant);
     }
@@ -14,7 +14,7 @@ const ItemDetail = ({detalle}) => {
                 <div className='Container'>
                     <div className='row m-5'>
                         <div className='col-6'>
-                            <img className='size' src={detalle.imgDetalle}></img>
+                            <img className='size' alt='' src={detalle.imgDetalle}/>
                         </div>
                         <div className='col-6 info'>
                             <h1>{detalle.name}</h1>

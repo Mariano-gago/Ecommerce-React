@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Item.css'
 
 
 
@@ -11,8 +12,8 @@ const Item = ({id, name, info, precio, img, stock, onAdd}) => {
     
 
     return (
-            <div>
-                <div className="card w-25 mt-5" >
+            <div class="col-4">
+                <div className="card mt-5 " >
                     <div className="card-header">
                         {name}
                     </div>
