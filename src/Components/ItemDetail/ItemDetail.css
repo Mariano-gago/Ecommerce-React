@@ -10,3 +10,14 @@
     height: 500px;
     text-align: center;
 }
+
+
+.btn-compra{
+    margin: 1em ;
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+}
+
+.btn-compra:hover{
+    background-color: #eed77d;
+}
