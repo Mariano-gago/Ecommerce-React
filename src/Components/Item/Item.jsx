@@ -12,7 +12,7 @@ const Item = ({id, name, info, precio, img, stock, onAdd}) => {
     
 
     return (
-            <div class="col-4">
+            <div className="col-4">
                 <div className="card mt-5 " >
                     <div className="card-header">
                         {name}

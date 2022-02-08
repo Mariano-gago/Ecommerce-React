@@ -22,7 +22,7 @@ const ItemListContainer = () => {
             .finally(()=> setLoading(false))
         },[categoria])
 
-        console.log(categoria);
+        //console.log(categoria);
     return (
         <div className='container'>
             <div>
