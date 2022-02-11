@@ -27,6 +27,8 @@ const ItemDetail = ({detalle}) => {
                         <div className='col-6 info'>
                             <h1>{detalle.name}</h1>
                             <p>{detalle.info}</p>
+                            <p>Presentacion: Caja x 12 Unidades</p>
+                            <p>$ {detalle.precio}</p>
                             {count === 0 ? 
                                     <ItemCount initial = {1} stock = {detalle.stock} onAdd={onAdd} /> 
                                     :
@@ -38,9 +40,7 @@ const ItemDetail = ({detalle}) => {
                                         <button className='btn btn-compra'>Seguir Comprando</button>
                                     </Link>
                                     </>
-                                    
-                            }
-                            
+                                    }
                         </div>
                     </div>
                 </div>

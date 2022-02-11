@@ -1,3 +1,18 @@
 .border{
     border: 2px solid black;
 }
+
+.titulo-carrito{
+    margin-top: 50px;
+    color: gray;
+}
+
+.info-carrito{
+    margin-top: 30px;
+}
+
+.precio{
+    color:  #ffcc00;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+}

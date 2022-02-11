@@ -1,10 +1,10 @@
 import ImgChocolate from '../Img/chocolate.png'
 import ImgMerengue from '../Img/merengue.png'
-import ImgCacao from '../Img/AlfajorCacao.jpg'
+import ImgCacao from '../Img/AlfajorCacao.png'
 import ImgNuez from '../Img/nuez.png'
-import ImgConoCacao from '../Img/HavannetCacaox1.jpg'
+import ImgConoCacao from '../Img/HavannetCacaox1.png'
 import ImgConoChocolate from '../Img/conochocolate.png'
-import ImgCookieLimon from '../Img/cookieLimon.jpg'
+import ImgCookieLimon from '../Img/cookieLimon.png'
 import ImgCookieChoco from '../Img/cookieChoco.png'
 import ImgDetalleChoco from '../Img/alfajorChocolatex12.jpg'
 import ImgDetalleNuez from '../Img/Alfajor-Nuez-x-12.jpg'
@@ -24,9 +24,9 @@ const productos = [
         categoria: "alfajores",
         name: "ALFAJOR DE CHOCOLATE",
         info: "Alfajor relleno de dulce de leche y cobertura de puro chocolate semiamargo.",
-        detalle: "Alfajor relleno de dulce de leche y cobertura de puro chocolate semiamargo.",
+        detalle: "Alfajor relleno de dulce de leche y cobertura de puro chocolate semiamargo. ",
         imgDetalle: ImgDetalleChoco,
-        precio: 150,
+        precio: 1600,
         img: ImgChocolate,
         cantidad: 1,
         stock: 250
@@ -38,7 +38,7 @@ const productos = [
         info: "Alfajor relleno con Dulce de leche y cubierto con Merengue.",
         detalle: "Alfajor relleno de dulce de leche y cobertura de merengue.",
         imgDetalle: ImgDetalleMerengue,
-        precio: 95,
+        precio: 1300,
         img: ImgMerengue,
         cantidad: 1,
         stock: 150
@@ -51,7 +51,7 @@ const productos = [
         info: "Alfajor de dulce de leche, cajú y nueces, cubierto de chocolate blanco.",
         detalle: "Alfajor de dulce de leche, cajú y nueces, cubierto de chocolate blanco.",
         imgDetalle: ImgDetalleNuez,
-        precio: 130,
+        precio: 1750,
         img: ImgNuez,
         cantidad: 1,
         stock: 85
@@ -63,7 +63,7 @@ const productos = [
         info: "Alfajor relleno con Dulce de leche y cubierto con 70% puro cacao.",
         detalle: "Alfajor relleno de dulce de leche y cubierto con 70% puro cacao.",
         imgDetalle: ImgDetalleChocoCacao,
-        precio: 95,
+        precio: 1950,
         img: ImgCacao,
         cantidad: 1,
         stock: 190
@@ -75,7 +75,7 @@ const productos = [
         info: "Conito relleno con Dulce de leche y cubierto con Chocolate semiamargo.",
         detalle: "Conito relleno con Dulce de leche y cubierto con Chocolate semiamargo.",
         imgDetalle: ImgDetalleConitos,
-        precio: 95,
+        precio: 950,
         img: ImgConoChocolate,
         cantidad: 1,
         stock: 190
@@ -87,7 +87,7 @@ const productos = [
         info: "Conito relleno con Dulce de leche y cubierto con un exquisito chocolate 70% Cacao.",
         detalle: "Conito relleno con Dulce de leche y cubierto con Chocolate semiamargo.",
         imgDetalle: ImgDetalleConitoCacao,
-        precio: 95,
+        precio: 1100,
         img: ImgConoCacao,
         cantidad: 1,
         stock: 190
@@ -99,7 +99,7 @@ const productos = [
         info: "Galletitas de limon rellena con una dulce crema de Limon.",
         detalle: "Galletitas de limon rellena con una dulce crema de Limon.",
         imgDetalle: ImgDetalleCookiesLimon,
-        precio: 95,
+        precio: 1350,
         img: ImgCookieLimon,
         cantidad: 1,
         stock: 190
@@ -107,11 +107,11 @@ const productos = [
     {
         id: "8",
         categoria: "cookies",
-        name: "GALLETITAS DE LIMON CON COBERTURA D CHOCOLATE",
+        name: "GALLETITAS DE LIMON CON COBERTURA DE CHOCOLATE",
         info: "Galletitas de limon rellena con una dulce crema de Limon y cubierta con chocolate.",
         detalle: "Galletitas de limon rellena con una dulce crema de Limon y cubierta con chocolate.",
         imgDetalle: ImgDetalleCookiesChoco,
-        precio: 95,
+        precio: 1500,
         img: ImgCookieChoco,
         cantidad: 1,
         stock: 190

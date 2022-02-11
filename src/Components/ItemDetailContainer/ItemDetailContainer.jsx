@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
     const [detalleProducto, setDetalleProducto] = useState({});
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
-    console.log(detalleProducto);
+    //console.log(detalleProducto);
 
     useEffect(()=> {
             getProductos()
@@ -20,7 +20,6 @@ const ItemDetailContainer = () => {
     },[id]) 
 
     //console.log(id);
-    //console.log(DetalleProducto);
     return <div>
         {
             loading ? <Spinner

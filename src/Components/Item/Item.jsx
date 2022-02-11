@@ -19,16 +19,11 @@ const Item = ({id, name, info, precio, img, stock, onAdd}) => {
                     </div>
                     <div className="card-body">
                         <img width={250} src={img} alt='' />            
-                        <div>
-                            <p>{info}</p> 
-                        </div>
-                        <div>
-                            <p>${precio}</p>
-                        </div>                                                           
+                        <p>${precio} x Docena</p>                                                          
                     </div>
                     <div className="card-footer">
                         <Link to={`/detalle/${id}`}>
-                            <button> DETALLE DEL PRODUCTO</button>
+                            <button className='btn btn-compra text-white'> DETALLE DEL PRODUCTO</button>
                         </Link>
                     </div>
                 </div>
