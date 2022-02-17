@@ -3,36 +3,36 @@ import './ItemCountStyle.css'
 
 export const ItemCount = ({initial, stock, onAdd}) => {
 
-    const [contador, setContador] = useState (initial);
+    const [count, setCount] = useState (initial);
 
-    const aumentar = () => {
+    const addUp = () => {
         //console.log("aumenta");
         //console.log(contador);
         //console.log(stock);
-        if(contador < stock){
-            setContador( contador +1)
+        if(count < stock){
+            setCount( count +1)
         }
     }
 
-    const restar = ()=> {
+    const subtract = ()=> {
         //console.log("resta");
-        if(contador > initial){
-            setContador( contador -1)
+        if(count > initial){
+            setCount( count -1)
         }
     }
 
-    const agregar = () => {
-        onAdd(contador)
+    const add = () => {
+        onAdd(count)
     }
 
     return (<div>
             <div>
-                <button className='btn btn-modo m-3' onClick={restar}> - </button>
-                {contador}
-                <button className='btn btn-modo  m-3' onClick={aumentar}> + </button>
+                <button className='btn btn-modo m-3' onClick={subtract}> - </button>
+                {count}
+                <button className='btn btn-modo  m-3' onClick={addUp}> + </button>
                 </div>
                 <div>
-                    <button className='btn btn-agregar' onClick={agregar}> Agregar al carrito </button>
+                    <button className='btn btn-agregar' onClick={add}> Agregar al carrito </button>
             </div>
         </div>);
 };

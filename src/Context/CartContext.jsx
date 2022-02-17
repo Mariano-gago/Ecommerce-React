@@ -10,47 +10,44 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     //Agrega Items al carrito
-    const agregarCarrito = (item) => {
-        //console.log(item.cantidad);
-        //console.log(item.precio);
-        const precioTotal = (item.precio * item.cantidad);
+    const addToCart = (item) => {
+        const totalPrice = (item.price * item.quantity);
 
-        if ( duplicados(item.name)){
+        if ( sameItem (item.name)){
 
-            const cantidadTotal = [...cartList];
+            const totalQuantity = [...cartList];
             
-            cantidadTotal.forEach(i => {
+            totalQuantity.forEach(i => {
                 if (i.name === item.name){
-                    i.cantidad += item.cantidad
-                    i.precio += precioTotal
+                    i.quantity += item.quantity
+                    i.price += totalPrice
                 }
             })
-            return setCartList (cantidadTotal)
+            return setCartList (totalQuantity)
         }
-        return setCartList([...cartList, {name: item.name, img:item.img,  precio: precioTotal, cantidad: item.cantidad}])
+        return setCartList([...cartList, {name: item.name, img: item.img,  price: totalPrice, quantity: item.quantity}])
     }
     
     //Evita productos duplicados en el carrito
-    const duplicados = (seleccion) => {
-        //console.log(seleccion);
+    const sameItem = (selection) => {
         const find = cartList.find( (i) =>{
-            return i.name === seleccion
+            return i.name === selection
         })
         return find
     }
 
     //Calcula la suma total de todos los productos seleccionados
-    const sumaTotal = () =>{
-        return cartList.reduce((acumulador , prod)=> acumulador = acumulador + prod.precio , 0 )
+    const totalPrice = () =>{
+        return cartList.reduce((acumulador , prod)=> acumulador = acumulador + prod.price , 0 )
     }
 
     //Calcula la cantidad total para mostrar en el widget del carrito
-    const cantidadTotal = () =>{
-        return cartList.reduce((acumulador, prod)=> acumulador += prod.cantidad, 0)
+    const totalQuantity = () =>{
+        return cartList.reduce((acumulador, prod)=> acumulador += prod.quantity, 0)
     }
 
     //Borra el producto del carrito
-    const borrarProductoEnCart = (item) =>{
+    const removeItemInCart= (item) =>{
         //Borra de a un producto pero no funciona bien...
         
         /* const isInCart= cartList.find((prod)=> prod.id === item.id);
@@ -65,23 +62,23 @@ const CartContextProvider = ({ children }) => {
             )
         } */
         //Borra todo el producto
-        const borrarItem = [...cartList]
-        const itemBorrado = borrarItem.filter(producto => producto.name !== item)
-        return setCartList(itemBorrado)
+        const removeItem = [...cartList]
+        const itemClear = removeItem.filter(product => product.name !== item)
+        return setCartList(itemClear)
     } 
 
     //Vacia el carrito completo
-    const vaciarCarrito = () =>{
+    const cleanCart = () =>{
         setCartList([]);
     }
 
     return <cartContext.Provider value= {{
         cartList,
-        agregarCarrito,
-        vaciarCarrito,
-        sumaTotal,
-        cantidadTotal,
-        borrarProductoEnCart
+        addToCart,
+        cleanCart,
+        totalPrice,
+        totalQuantity,
+        removeItemInCart
     }}>
             {children}
             </cartContext.Provider>;

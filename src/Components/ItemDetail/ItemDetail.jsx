@@ -7,30 +7,27 @@ import { useCartContext } from '../../Context/CartContext';
 
 
 
-const ItemDetail = ({detalle}) => {
-    //console.log(detalle);
-    const { agregarCarrito} =  useCartContext()
+const ItemDetail = ({detail}) => {
+    const { addToCart} =  useCartContext()
     const [count, setCount] = useState(0);
 
     function onAdd (cant){
         setCount(cant);
-        agregarCarrito({...detalle, cantidad: cant});
+        addToCart({...detail, quantity: cant});
     }
-    
-    //console.log(cartList);
     return <div>
                 <div className='Container'>
                     <div className='row m-5'>
                         <div className='col-6'>
-                            <img className='size' alt='' src={detalle.imgDetalle}></img>
+                            <img className='size' alt='' src={detail.imgDetail}></img>
                         </div>
                         <div className='col-6 info'>
-                            <h1>{detalle.name}</h1>
-                            <p>{detalle.info}</p>
+                            <h1>{detail.name}</h1>
+                            <p>{detail.info}</p>
                             <p>Presentacion: Caja x 12 Unidades</p>
-                            <p>$ {detalle.precio}</p>
+                            <p>$ {detail.price}</p>
                             {count === 0 ? 
-                                    <ItemCount initial = {1} stock = {detalle.stock} onAdd={onAdd} /> 
+                                    <ItemCount initial = {1} stock = {detail.stock} onAdd={onAdd} /> 
                                     :
                                     <>
                                     <Link to='/Cart'>

@@ -4,12 +4,7 @@ import './Item.css'
 
 
 
-const Item = ({id, name, info, precio, img, stock, onAdd}) => {
-    //console.log(name);
-    //console.log(name);
-    //console.log(img);
-
-    
+const Item = ({id, name, price, img}) => {
 
     return (
             <div className="col-4">
@@ -19,7 +14,7 @@ const Item = ({id, name, info, precio, img, stock, onAdd}) => {
                     </div>
                     <div className="card-body">
                         <img width={250} src={img} alt='' />            
-                        <p>${precio} x Docena</p>                                                          
+                        <p>${price} x Docena</p>                                                          
                     </div>
                     <div className="card-footer">
                         <Link to={`/detalle/${id}`}>

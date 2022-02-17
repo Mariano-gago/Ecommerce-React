@@ -1,25 +1,26 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect} from 'react';
-import getProductos from '../../Helpers/getProductos';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from 'react-bootstrap/Spinner';
+import { getFirestore, getDoc, doc } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
 
-    const [detalleProducto, setDetalleProducto] = useState({});
+    const [detailProduct, setDetailProduct] = useState({});
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
-    //console.log(detalleProducto);
 
-    useEffect(()=> {
-            getProductos()
-            .then(productos => setDetalleProducto (productos.find( prod => prod.id === id)))
-            .catch((error) => console.log(error))
-            .finally(()=> setLoading(false))
-    },[id]) 
+    useEffect(() => {
+        const dataBase = getFirestore()
+        const itemDetail = doc(dataBase, 'productos', id) 
+        getDoc(itemDetail)
+        .then(resp => setDetailProduct( { id: resp.id, ...resp.data() } ))
+        .catch(err => console.log(err))
+        .finally(()=> setLoading(false))
+    }, [id])
 
-    //console.log(id);
+
     return <div>
         {
             loading ? <Spinner
@@ -31,7 +32,7 @@ const ItemDetailContainer = () => {
             aria-hidden="true"
         />
         :
-        <ItemDetail detalle = {detalleProducto}/>
+        <ItemDetail detail = {detailProduct}/>
         }
     </div>;
 };

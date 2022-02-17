@@ -1,28 +1,38 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import getProductos from '../../Helpers/getProductos';
 import ItemList from '../ItemList/ItemList';
 import Spinner from 'react-bootstrap/Spinner';
+import {getFirestore, getDocs, collection, query, where} from 'firebase/firestore'
 
 const ItemListContainer = () => {
-    const [ListadoProductos, setListadoProductos] = useState([]);
+    const [productsList, setProductsList] = useState([]);
+
     const [loading, setLoading] = useState(true);
     
     const {categoria} = useParams()
 
         useEffect(()=> {
-            getProductos()
-            .then ((productos)=>
-            setListadoProductos(
-                categoria
-                        ? productos.filter ((prod)=> prod.categoria === categoria)
-                        : productos
-            ))
-            .catch((error) => console.log(error))
-            .finally(()=> setLoading(false))
-        },[categoria])
+            setLoading(true)
+            const dataBase = getFirestore()
 
-        //console.log(categoria);
+            const dataBaseCollection = collection(dataBase, 'productos')
+            const queryF = !categoria ? 
+            dataBaseCollection
+            : 
+            query(dataBaseCollection, 
+                where('category', '==', categoria)
+            )
+
+            getDocs(queryF)
+            .then(resp => setProductsList( resp.docs.map(prod => ( { id: prod.id, ...prod.data() } )  ) ))
+            .catch((err) => console.log(err))
+            .finally(() => setLoading(false))
+
+            }, [categoria])
+
+
+        //console.log(ListadoProductos);
+
     return (
         <div className='container'>
             <div>
@@ -36,7 +46,7 @@ const ItemListContainer = () => {
                 aria-hidden="true"
             />
             :
-            <ItemList className='' listado={ListadoProductos}/>
+            <ItemList className='' list={productsList}/>
             }
             </div>
             

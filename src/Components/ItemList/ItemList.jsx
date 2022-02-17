@@ -2,20 +2,20 @@ import React from 'react';
 import Item from '../Item/Item';
 
 
-const ItemList = ({listado}) => {
+const ItemList = ({list}) => {
     //console.log(listado);
     return (
     <div className='row'>
-        {listado.map( (producto) => (
+        {list.map( (product) => (
         <Item
-        key= {producto.id}
-        id= {producto.id}
-        categoria= {producto.categoria}
-        name= {producto.name}
-        info= {producto.info}
-        precio= {producto.precio}
-        img= {producto.img}
-        stock={producto.stock}
+        key= {product.id}
+        id= {product.id}
+        category= {product.category}
+        name= {product.name}
+        info= {product.info}
+        price= {product.price}
+        img= {product.img}
+        stock={product.stock}
         />
         ))}
     </div>
