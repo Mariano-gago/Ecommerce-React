@@ -7,7 +7,6 @@ import { useCartContext } from '../../Context/CartContext';
 
 export const ImgCarrito = () => {
     const {totalQuantity} = useCartContext([]);
-    //console.log(totalQuantity);
     return <div>
                 <button type="button" className="btn  position-relative">
                     <img src={Image} alt='Logo' width={30}/>

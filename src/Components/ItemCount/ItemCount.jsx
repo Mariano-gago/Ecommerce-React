@@ -6,9 +6,6 @@ export const ItemCount = ({initial, stock, onAdd}) => {
     const [count, setCount] = useState (initial);
 
     const addUp = () => {
-        //console.log("aumenta");
-        //console.log(contador);
-        //console.log(stock);
         if(count < stock){
             setCount( count +1)
         }

@@ -1,0 +1,50 @@
+footer{
+    background-color: #f1f1f1;
+    color: #666;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3{
+    font-size: 1.2em;
+}
+.footergrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:50px 150px;
+    justify-content:center;
+    grid-column-gap: 10px;
+    grid-row-gap:10px;
+    grid-template-areas: 
+    "titulo1 titulo1 titulo1"
+    "info contacto redes";
+}
+
+.titulo1{
+    grid-area: titulo1;
+    margin-left: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 0.8em;
+
+}
+
+.info{
+    grid-area: info;
+    justify-self: center;
+}
+
+
+.redes1{
+    margin-left: 45px;
+    justify-self: center;
+}
+
+
+.contacto{
+    grid-area: contacto;
+    justify-self: center;
+    font-size: 1em;
+}
+
+section p{
+    font-size: 0.75em;
+} 

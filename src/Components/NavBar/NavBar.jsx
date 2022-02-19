@@ -15,7 +15,6 @@ const NavBar = () => {
                     <NavLink className='text-black titulo' to=''>
                     Las Delicias de Maria Cecilia
                     </NavLink>
-                
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto nav">

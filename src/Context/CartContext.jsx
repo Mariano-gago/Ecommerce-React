@@ -25,7 +25,7 @@ const CartContextProvider = ({ children }) => {
             })
             return setCartList (totalQuantity)
         }
-        return setCartList([...cartList, {name: item.name, img: item.img,  price: totalPrice, quantity: item.quantity}])
+        return setCartList([...cartList, { id: item.id, name: item.name, img: item.img,  price: totalPrice, quantity: item.quantity}])
     }
     
     //Evita productos duplicados en el carrito

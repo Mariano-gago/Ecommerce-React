@@ -6,32 +6,28 @@ import {getFirestore, getDocs, collection, query, where} from 'firebase/firestor
 
 const ItemListContainer = () => {
     const [productsList, setProductsList] = useState([]);
-
     const [loading, setLoading] = useState(true);
-    
-    const {categoria} = useParams()
+    const {categoria} = useParams();
 
         useEffect(()=> {
-            setLoading(true)
-            const dataBase = getFirestore()
+            setLoading(true);
+            const dataBase = getFirestore();
+            const dataBaseCollection = collection(dataBase, 'productos');
 
-            const dataBaseCollection = collection(dataBase, 'productos')
-            const queryF = !categoria ? 
+            const queryFilter = !categoria ? 
             dataBaseCollection
             : 
             query(dataBaseCollection, 
                 where('category', '==', categoria)
-            )
+            );
 
-            getDocs(queryF)
-            .then(resp => setProductsList( resp.docs.map(prod => ( { id: prod.id, ...prod.data() } )  ) ))
-            .catch((err) => console.log(err))
-            .finally(() => setLoading(false))
+            getDocs(queryFilter)
+                .then(resp => setProductsList( resp.docs.map(prod => ( { id: prod.id, ...prod.data() } )  ) ))
+                .catch((err) => console.log(err))
+                .finally(() => setLoading(false))
 
-            }, [categoria])
+            }, [categoria]);
 
-
-        //console.log(ListadoProductos);
 
     return (
         <div className='container'>
@@ -49,7 +45,6 @@ const ItemListContainer = () => {
             <ItemList className='' list={productsList}/>
             }
             </div>
-            
         </div>
     );
 };

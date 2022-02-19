@@ -11,14 +11,16 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
 
+    console.log(id);
     useEffect(() => {
-        const dataBase = getFirestore()
-        const itemDetail = doc(dataBase, 'productos', id) 
+        const dataBase = getFirestore();
+        const itemDetail = doc(dataBase, 'productos', id);
+
         getDoc(itemDetail)
-        .then(resp => setDetailProduct( { id: resp.id, ...resp.data() } ))
-        .catch(err => console.log(err))
-        .finally(()=> setLoading(false))
-    }, [id])
+            .then(resp => setDetailProduct( { id: resp.id, ...resp.data() } ))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))
+    }, [id]);
 
 
     return <div>
