@@ -80,6 +80,8 @@ const Form = () => {
         handleChange(e);
         setErrors(validateForm(dataForm))
     }
+
+    
     
     const validateForm = (dataForm)=>{
 
@@ -162,7 +164,7 @@ const Form = () => {
                     </div>
                 </div>
                 <div>
-                    <button className='btn btn-success m-2'>Comprar</button>
+                    <button className='btn btn-success m-2' disabled= {!dataForm.email || !dataForm.name || !dataForm.telephone || !dataForm.adress || !dataForm.idNumber} >Comprar</button>
                 <Link to='/'>
                     <button className='btn btn-danger m-2' onClick={cleanCart}>Cancelar</button>
                 </Link>
