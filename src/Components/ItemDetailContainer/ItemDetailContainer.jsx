@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
@@ -11,7 +10,6 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
 
-    console.log(id);
     useEffect(() => {
         const dataBase = getFirestore();
         const itemDetail = doc(dataBase, 'productos', id);

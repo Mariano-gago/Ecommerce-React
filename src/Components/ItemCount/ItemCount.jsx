@@ -1,19 +1,17 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import './ItemCountStyle.css'
 
 export const ItemCount = ({initial, stock, onAdd}) => {
 
     const [count, setCount] = useState (initial);
 
-    const addUp = () => {
-        
+    const addUp = () => {        
         if(count < stock){
             setCount( count +1)
         }
     }
 
     const subtract = ()=> {
-
         if(count > initial){
             setCount( count -1)
         }

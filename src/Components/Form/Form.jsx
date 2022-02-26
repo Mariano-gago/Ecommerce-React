@@ -1,4 +1,3 @@
-import React from 'react'
 import {getFirestore, collection, addDoc, documentId, where, writeBatch, getDocs, query} from 'firebase/firestore'
 import { useCartContext } from '../../Context/CartContext';
 import { useState } from 'react';
@@ -6,10 +5,12 @@ import { Link } from 'react-router-dom';
 import './Form.css'
 
 
+
 const Form = () => {
     const [id, setId] = useState('');
     const [errors, setErrors]= useState({});
     const {cartList, cleanCart, totalPrice} = useCartContext([]);
+    
     const [dataForm, setDataForm] = useState({
         name:'',
         idNumber:'',
@@ -66,6 +67,7 @@ const Form = () => {
         });
         batch.commit();
         }
+
     const handleChange = (e)=>{
         const {name, value} = e.target
         setDataForm({
@@ -104,8 +106,6 @@ const Form = () => {
 
     return (
         <div>
-            <h4 className="btn-outline-success" >{id !== '' && `Compra finalizada su numero de ticket es : ${id}` }</h4>
-
             <form className='container mt-5' onSubmit={purchase}>
                 <div>
                     <p className='titulo-form'>Completa los datos para finalizar la compra</p>
@@ -164,10 +164,11 @@ const Form = () => {
                 <div>
                     <button className='btn btn-success m-2'>Comprar</button>
                 <Link to='/'>
-                    <button className='btn btn-danger m-2'>Cancelar</button>
+                    <button className='btn btn-danger m-2' onClick={cleanCart}>Cancelar</button>
                 </Link>
                 </div>
             </form>
+            <h4 className="btn-success message-success" >{id !== '' && `¡Gracias por su compra! Su numero de ticket es : ${id}` }</h4>
         </div>
             )
         };

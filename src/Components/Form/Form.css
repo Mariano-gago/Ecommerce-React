@@ -7,3 +7,9 @@
     margin-top: -2px;
     color: red;
 }
+
+.message-success{
+    margin: 5px 0px 50px 400px;
+    width: fit-content;
+    
+}
