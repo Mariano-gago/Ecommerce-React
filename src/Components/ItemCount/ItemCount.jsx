@@ -6,13 +6,14 @@ export const ItemCount = ({initial, stock, onAdd}) => {
     const [count, setCount] = useState (initial);
 
     const addUp = () => {
+        
         if(count < stock){
             setCount( count +1)
         }
     }
 
     const subtract = ()=> {
-        //console.log("resta");
+
         if(count > initial){
             setCount( count -1)
         }

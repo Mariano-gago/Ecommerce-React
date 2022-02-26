@@ -2,3 +2,8 @@
     font-size: 1em;
     font-weight:600;
 }
+
+.message-error{
+    margin-top: -2px;
+    color: red;
+}

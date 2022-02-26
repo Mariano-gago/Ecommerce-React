@@ -7,14 +7,14 @@ const ItemList = ({list}) => {
             <div className='row'>
                 {list.map( (product) => (
                 <Item
-                      key= {product.id}
-                      id= {product.id}
-                      category= {product.category}
-                      name= {product.name}
-                      info= {product.info}
-                      price= {product.price}
-                      img= {product.img}
-                      stock={product.stock}
+                    key= {product.id}
+                    id= {product.id}
+                    category= {product.category}
+                    name= {product.name}
+                    info= {product.info}
+                    price= {product.price}
+                    img= {product.img}
+                    stock={product.stock}
                 />
                 ))}
             </div>

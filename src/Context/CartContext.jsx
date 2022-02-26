@@ -48,20 +48,6 @@ const CartContextProvider = ({ children }) => {
 
     //Borra el producto del carrito
     const removeItemInCart= (item) =>{
-        //Borra de a un producto pero no funciona bien...
-        
-        /* const isInCart= cartList.find((prod)=> prod.id === item.id);
-
-        if(isInCart.cantidad === 1){
-            setCartList(cartList.filter((prod)=> prod.id !== item.id))
-        }else{
-            setCartList(
-                cartList.map((x)=>
-                x.id === item.id?{...isInCart, cantidad: isInCart.cantidad - 1}: x
-            )
-            )
-        } */
-        //Borra todo el producto
         const removeItem = [...cartList]
         const itemClear = removeItem.filter(product => product.name !== item)
         return setCartList(itemClear)

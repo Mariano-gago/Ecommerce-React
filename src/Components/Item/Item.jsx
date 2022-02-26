@@ -23,8 +23,7 @@ const Item = ({id, name, price, img}) => {
                     </div>
                 </div>
             </div>
-
-)}
+)};
 
 export default Item
 
