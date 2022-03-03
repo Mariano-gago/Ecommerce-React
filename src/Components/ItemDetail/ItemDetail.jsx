@@ -35,7 +35,7 @@ const ItemDetail = ({detail}) => {
                                         <button className='btn btn-compra'>Seguir Comprando</button>
                                     </Link>
                                     </>
-                                    }
+                            }
                         </div>
                     </div>
                 </div>

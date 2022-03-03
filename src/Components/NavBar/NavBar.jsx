@@ -1,7 +1,7 @@
-import  {Container, Nav, Navbar} from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
-import { ImgCarrito } from './ImgCarrito'
-import './NavBar.css'
+import  {Container, Nav, Navbar} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import { ImgCarrito } from './ImgCarrito';
+import './NavBar.css';
 
 
 const NavBar = () => {
@@ -30,6 +30,6 @@ const NavBar = () => {
                 </Navbar>
         </div>
     )
-}
+};
 
-export default NavBar
+export default NavBar;

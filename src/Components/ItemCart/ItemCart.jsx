@@ -1,4 +1,4 @@
-import {useCartContext} from '../../Context/CartContext'
+import {useCartContext} from '../../Context/CartContext';
 
 export const ItemCart = () => {
     const {cartList, removeItemInCart} = useCartContext([]);
@@ -11,4 +11,6 @@ export const ItemCart = () => {
             <button className='m-3 btn btn-outline-danger' onClick={()=> removeItemInCart(product.name)}>x</button>
         </div>)}</div>
   )
-}
+};
+
+

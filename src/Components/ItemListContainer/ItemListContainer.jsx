@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
 import Spinner from 'react-bootstrap/Spinner';
-import {getFirestore, getDocs, collection, query, where} from 'firebase/firestore'
+import {getFirestore, getDocs, collection, query, where} from 'firebase/firestore';
 
 const ItemListContainer = () => {
     const [productsList, setProductsList] = useState([]);
@@ -49,4 +49,4 @@ const ItemListContainer = () => {
     );
 };
 
-export default ItemListContainer
+export default ItemListContainer;

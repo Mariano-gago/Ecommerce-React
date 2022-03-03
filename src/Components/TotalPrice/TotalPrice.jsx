@@ -1,5 +1,5 @@
-import { useCartContext } from '../../Context/CartContext'
-import { NavLink } from 'react-router-dom'
+import { useCartContext } from '../../Context/CartContext';
+import { NavLink } from 'react-router-dom';
 
 const TotalPrice = () => {
 
@@ -14,6 +14,6 @@ const TotalPrice = () => {
                         </NavLink>
                                 <button className='btn btn-danger m-3' onClick={cleanCart}>VACIAR CARRITO</button>
                 </div>
-}
+};
 
 export default TotalPrice;

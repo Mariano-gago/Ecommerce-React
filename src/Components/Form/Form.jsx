@@ -2,7 +2,8 @@ import {getFirestore, collection, addDoc, documentId, where, writeBatch, getDocs
 import { useCartContext } from '../../Context/CartContext';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Form.css'
+import {ItemCart} from '../ItemCart/ItemCart';
+import './Form.css';
 
 
 
@@ -17,7 +18,7 @@ const Form = () => {
         adress:'',
         email:'',
         telephone:''
-    })
+    });
 
 
     const purchase = async (e)=>{
@@ -32,6 +33,7 @@ const Form = () => {
             const name = cartItem.name;
             const price = cartItem.price;
             const quantity = cartItem.quantity;
+        
         return{
             id,
             name,
@@ -66,7 +68,7 @@ const Form = () => {
             cleanCart();
         });
         batch.commit();
-        }
+        };
 
     const handleChange = (e)=>{
         const {name, value} = e.target
@@ -79,7 +81,7 @@ const Form = () => {
     const handleBlur = (e) => {
         handleChange(e);
         setErrors(validateForm(dataForm))
-    }
+    };
 
     
     
@@ -105,10 +107,11 @@ const Form = () => {
 
         return errors;
     };
-
+    
     return (
         <div>
             <form className='container mt-5' onSubmit={purchase}>
+            <ItemCart/>
                 <div>
                     <p className='titulo-form'>Completa los datos para finalizar la compra</p>
                 </div>

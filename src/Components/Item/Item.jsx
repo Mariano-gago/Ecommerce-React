@@ -24,7 +24,7 @@ const Item = ({id, name, price, img}) => {
             </div>
 )};
 
-export default Item
+export default Item;
 
 
 
